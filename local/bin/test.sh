@@ -1,0 +1,1 @@
+rm -f /local/web/foo/htdocs/screencapt/foo.*; /local/bin/urlcap.sh -u 'http://www.youtube.com/watch?v=PXRX47L_3yE' -o /local/web/foo/htdocs/screencapt/foo.png -l /local/web/foo/htdocs/screencapt/foo.txt -d 15 -od 3 -v

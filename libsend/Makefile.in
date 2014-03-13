@@ -1,0 +1,10 @@
+all: libsend.so
+
+libsend.so: libsend.c
+	gcc -fPIC -rdynamic -g -c -Wall libsend.c
+	gcc -shared -Wl,-soname,libsend.so -o libsend.so \
+	    libsend.o -lc -ldl @LIBSOCKET@ 
+
+clean:
+	rm -f libsend.o libsend.so
+

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#mkfifo /local/screencapt/var/run/screencapt
+#chmod 666 /local/screencapt/var/run/screencapt
+
+cat /etc/resolv.conf > /local/screencapt/etc/resolv.conf
+
+rm /local/screencapt/tmp/.X1-lock
+rm -rf /local/screencapt/tmp/.X11-unix
+
+mkdir /local/screencapt/tmp/screencapt
+chmod 777 /local/screencapt/tmp/screencapt
+
+exec fghack chroot /local/screencapt/ su -s /bin/bash capt -c "cd ~capt; vncserver :1 -geometry 1024x768 -depth 16"
+

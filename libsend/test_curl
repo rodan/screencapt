@@ -1,0 +1,7 @@
+rm -f /tmp/wrapper.log
+
+LD_LIBRARY_PATH=. LD_PRELOAD=libsend.so curl --head http://www.google.com
+
+ls -al /tmp/wrapper.log 2>/dev/null
+strings /tmp/wrapper.log 2>/dev/null
+

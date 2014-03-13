@@ -1,0 +1,26 @@
+
+this is a wrapper library that logs all send() system calls.
+it's the same as invoking
+
+strace -e trace=send -s 1000 -o /tmp/out /bin/foo
+
+but it's faster if the process that is inspected is something big (like firefox for instance)
+
+ homepage:        https://github.com/rodan/screencapt
+ author:          Petre Rodan <petre.rodan@simplex.ro>
+ license:         GNU GPLv3
+
+
+the source code based is based on netjail-1.0.0 written by Craig B. Agricola <craig@theagricolas.org>
+http://sourceforge.net/projects/netjail
+http://freshmeat.net/projects/netjail
+
+
+libsend is used to intercept the send() system call and to log each instance of it for further analysis
+
+
+Usage
+
+LD_LIBRARY_PATH=. LD_PRELOAD=libsend.so curl --head http://www.google.com
+
+

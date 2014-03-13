@@ -1,0 +1,19 @@
+
+this is a project that makes it easy to grab screenshots of automated XFree processes.
+scripts are provided for starting a firefox process with an URL and grab a screen capture of the rendered page.
+
+dependencies:
+ - well, Linux.
+ - a chroot with a linux distro (with Xfree/Xorg libs, tightvnc server, sshd server) located in /local/screencapt
+
+what's included:
+ - supervise scripts for the sshd, tightvnc daemons
+ - a wrapper library for send() syscalls used to create a textfile with firefox's data communications
+ - scripts that control firefox processes in the chroot
+
+ one can connect to the vnc server to see what is going on in the chroot environment
+
+ homepage:        https://github.com/rodan/screencapt
+ author:          Petre Rodan <petre.rodan@simplex.ro>
+ license:         GNU GPLv3
+

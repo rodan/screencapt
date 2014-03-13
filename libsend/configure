@@ -1,0 +1,24 @@
+#!/bin/sh
+
+FOUND_LIBSOCKET=`ls /lib/libsocket.so* 2>/dev/null | sort | head -1`
+if [ "$FOUND_LIBSOCKET"x != ""x ]; then
+  SOCKET_LIB_PATH="$FOUND_LIBSOCKET"
+  LIBSOCKET="-lsocket"
+else
+  FOUND_LIBC=`ls /lib/libc.so* 2>/dev/null | sort | head -1`
+  if [ "$FOUND_LIBC"x != ""x ]; then
+    SOCKET_LIB_PATH="$FOUND_LIBC"
+    LIBSOCKET=""
+  else
+	echo "You don't appear to have a libsocket.so or a libc.so, sorry..."
+	exit -1
+  fi
+fi
+
+echo "Creating Makefile..."
+sed -e "s#@SOCKET_LIB_PATH@#$SOCKET_LIB_PATH#g" \
+    -e "s#@LIBSOCKET@#$LIBSOCKET#g" <Makefile.in >Makefile
+
+echo "Creating config.h..."
+sed -e "s#@SOCKET_LIB_PATH@#$SOCKET_LIB_PATH#g" \
+    -e "s#@LIBSOCKET@#$LIBSOCKET#g" <config.h.in >config.h

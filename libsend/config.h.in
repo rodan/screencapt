@@ -1,0 +1,1 @@
+#define SOCKET_LIB "@SOCKET_LIB_PATH@"
