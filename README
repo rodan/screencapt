@@ -3,8 +3,8 @@ this is a project that makes it easy to grab screenshots of automated XFree proc
 scripts are provided for starting a firefox process with an URL and grab a screen capture of the rendered page.
 
 dependencies:
- - well, Linux.
- - a chroot with a linux distro (with Xfree/Xorg libs, tightvnc server, sshd server) located in /local/screencapt
+ - well, tiny Linux install + daemontools
+ - a chroot with a linux distro (with XFree/X.Org libs, tightvnc server, sshd server) located in /local/screencapt
 
 what's included:
  - supervise scripts for the sshd, tightvnc daemons

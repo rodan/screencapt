@@ -1,0 +1,8 @@
+#!/bin/bash
+
+mount | grep -q '/local/screencapt/proc' && umount /local/screencapt/proc
+mount | grep -q '/local/screencapt/dev/shm' && umount /local/screencapt/dev/shm
+mount | grep -q '/local/screencapt/usr/portage' && umount /local/screencapt/usr/portage
+mount | grep -q '/local/screencapt/local/portage/overlay' && umount /local/screencapt/local/portage/overlay
+mount | grep -q '/local/screencapt/local/portage/distfiles' && umount /local/screencapt/local/portage/distfiles
+

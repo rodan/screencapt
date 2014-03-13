@@ -1,0 +1,9 @@
+*.[oa]
+*.*~
+*.s
+*.swp
+*.?#?
+*.pyc
+output.map
+tags
+
